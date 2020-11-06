@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Formulare</title>
+	</head>
+	<body>
+		<h1>Ein Formular</h1>
+		<form>
+			<input name="a" />
+			<input name="b" />
+			<input name="c" />
+			<hr/>
+			<input type="button" value="Wegschicken" onclick="weg()"  />
+			<input type="button" value="Zurücksetzen" onclick="retur()"/>
+		</form>
+		<script type="text/javascript">
+			function weg() {
+				window.document.forms[0].submit();
+			}
+			function retur() {
+				window.document.forms[0].reset();
+			}
+			window.document.forms[0].action = "http://safety-first-rock.de/info.php";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM</title>
+    </head>
+  <body>
+    <h3>Zugriff auf die Informationen in location</h3>
+    <button>Zerlegen von location</button>
+  </body>
+  <script type="text/javascript">
+		function locationZerlegen() {
+			alert("protocol: " + location.protocol +
+			"\nhost: " + location.host +
+			"\nport: " + location.port +
+			"\npathname: " + location.pathname +
+			"\nhash: " + location.hash +
+			"\nsearch: " + location.search +
+			"\nhref: " + location.href +
+			"\nhostname: " + location.hostname);
+		}
+		document.getElementsByTagName("button")[0].onclick
+		= locationZerlegen;
+  </script>
+</html>

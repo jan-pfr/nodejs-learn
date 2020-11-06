@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Zugriffsmöglichkeiten</title>
+		<script type="text/javascript">
+			function init() {
+				alert(document.getElementsByTagName("img")[0].src);
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<h1>Zugriffsmöglichkeiten auf DOM-Elemente der Webseite</h1>
+		<img src="images/b1.png" alt="Aus der Luft" name="bild1"/>
+		<div id="bild1info"></div>
+		<img src="images/b1.jpg" alt="In die Luft"  name="bild2"/>
+		<div id="bild2info"></div>
+	</body>
+</html>

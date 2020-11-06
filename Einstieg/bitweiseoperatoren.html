@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Bitweise Operatoren</title>
+	</head>
+	<body>
+		<h1>Bitweise Operatoren</h1>
+		<script type="text/javascript">
+			var zahl = 42;			// Binärdarstellung 00101010
+			var a = zahl << 1;		// Binärdarstellung 01010100
+			var b = zahl >> 1;		// Binärdarstellung 00010101
+			var c = zahl << 2;		// Binärdarstellung 10101000
+			var d = zahl << 3;		// Binärdarstellung 01010000
+			var e = zahl >>> 3;		// Binärdarstellung 00000101
+			var f = zahl >>> 2;		// Binärdarstellung 00001010
+			document.write("Der Wert von 42 << 1: " + a + "<br />");
+			document.write("Der Wert von 42 >> 1: " + b + "<br />");
+			document.write("Der Wert von 42 << 2: " + c + "<br />");
+			document.write("Der Wert von 42 << 3: " + d + "<br />");
+			document.write("Der Wert von 42 >>> 3: " + e + "<br />");
+			document.write("Der Wert von 42 >>> 2: " + f + "<br />");
+		</script>
+	</body>
+</html>

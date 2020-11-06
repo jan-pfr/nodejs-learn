@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Arrays</title>
+	</head>
+	<body>
+		<h1>Arrays</h1>
+		<script type="text/javascript">
+			var person = new Array();
+			person[0] = "Milchstrasse";
+			person[1] = 42;
+			person[2] = 12345;
+			person[3] = "Mond";
+			person[4] = "00612345678";
+			person[5] = "Bilbo";
+			person[10] = "Beutlin";
+			for( i = 0; i < person.length; i++) {
+				if(person[i] == undefined)
+					continue;
+				document.write(person[i] + "<br />");
+			}
+			var x = {
+				name : "Gandalf",
+				alter : 179,
+				beruf : "Zauberer"
+			};
+			for(i in x) {
+				document.write(x[i] + "<br />");
+			}
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+h1 {
+	background-color:black;
+	color:white;
+	border-width:1px;
+	border-style:solid;
+	text-align:center;
+}
+h2 {
+	background-color:lightgray;
+	color:yellow;
+}
+h3 {
+	background-color:lightblue;
+	color:red;
+}
+a{
+	text-decoration: none;
+	background-color:black;
+	color:white;
+	font-size:20px;
+}
+body{
+	background-color:yellow;	
+}
+

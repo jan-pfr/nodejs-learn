@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Zugriffsmöglichkeiten auf Formularinhalte</title>
+		<script type="text/javascript">
+			function inhalt() {
+				document.getElementById("info").innerHTML = document.getElementsByTagName("input")[0].value;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Zugriffsmöglichkeiten DOM-Elemente der Webseite</h1>
+		<form>
+			<input />
+		</form>
+		<div id="info"></div>
+		<button onclick="inhalt()">
+			Klick
+		</button>
+	</body>
+</html>

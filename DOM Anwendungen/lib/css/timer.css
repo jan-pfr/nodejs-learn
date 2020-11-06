@@ -1,0 +1,16 @@
+body {
+	background-color:gray;
+}
+h3 {
+	background-color:black;
+	color:white;
+	text-align:center;
+}
+#ani1 {
+	width: 0px;
+	height: 0px;
+	background-color: red;
+}
+#ani2 {
+	width: 0px;
+}

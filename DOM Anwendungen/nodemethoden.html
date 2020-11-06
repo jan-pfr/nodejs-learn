@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>DOM</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var ausrichtung = document.createAttribute("align");
+			ausrichtung.nodeValue = "center";
+			var css = document.createAttribute("style");
+			css.nodeValue = "background:red;color:white";
+			var u1 = document.createElement("h1");
+			var text1 = document.createTextNode("Methoden von node");
+			u1.appendChild(text1);
+			var u2 = document.createElement("h2");
+			var text2 = document.createTextNode("");
+			text2.insertData(0, "Textdaten mit insertData()");
+			text2.appendData(" und mit appendData() hinzufügen");
+			u2.appendChild(text2);
+			document.getElementsByTagName("body")[0].appendChild(u2);
+			document.getElementsByTagName("body")[0].insertBefore(u1, u2);
+			with(document.getElementsByTagName("h1")[0]) {
+				setAttributeNode(ausrichtung);
+				setAttributeNode(css);
+			}
+			u2.setAttributeNode(u1.getAttributeNode("style").cloneNode(true));
+			u2.setAttribute("align", "right");
+
+		</script>
+	</body>
+</html>

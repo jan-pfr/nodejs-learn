@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<title>Kontrollstrukturen</title>
+	</head>
+	<body>
+		<h1>Kontrollstrukturen</h1>
+		<script type="text/javascript">
+			var erg = 1 * prompt("Geben Sie eine Zahl zwischen 1 und 10 ein", "");
+			document.write("Sie haben " + erg + " eingeben!<br />");
+			switch(erg) {
+				case 1:
+					document.write("Das führt zur Auswahl 1.<br />");
+					break;
+				case 2:
+					document.write("Das führt zur Auswahl 2.<br />");
+					break;
+				case 3:
+					document.write("Das führt zur Auswahl 3.<br />");
+					break;
+				case 4:
+					document.write("Das führt zur Auswahl 4.<br />");
+					break;
+				default:
+					document.write("Der Vorgabefall wird genommen.<br />");
+			}
+			document.write("<hr />Nach der switch-case-Anweisung.");
+
+		</script>
+	</body>
+</html>

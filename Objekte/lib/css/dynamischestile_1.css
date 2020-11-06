@@ -1,0 +1,21 @@
+h1 {
+	color:black;
+	font-size:44px;
+	text-align:right;
+}
+h2 {
+	background-color:yellow;
+	text-align:center;
+}
+h3 {
+	background-color:red;
+	text-align:center;
+}
+a {
+	background-color:blue;
+	color:white;
+}
+body {
+	background-color:gray;
+}
+

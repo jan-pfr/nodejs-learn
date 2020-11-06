@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Ablaufdatum</title>
+	</head>
+	<body>
+		<h1>AJAX-Schulung</h1>
+		<script type="text/javascript">
+			var beginn = new Date(2011, 11, 21);
+			var ende = new Date(2011, 11, 23);
+			var besuch = new Date();
+			if((beginn - besuch) > 0) {
+				document.write("<h4><a href='http://rjs.de'>Anmeldung zur Schulung</a></h4>");
+			} else if((ende - besuch) > 0) {
+				document.write("<h4>Die Schulung wird gerade durchgeführt.</h4>");
+			} else {
+				document.write("<h4>Die Schulung ist beendet.</h4>");
+			}
+		</script>
+	</body>
+</html>

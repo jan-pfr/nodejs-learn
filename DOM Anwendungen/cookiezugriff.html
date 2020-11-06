@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM</title>
+   </head>
+  <script type="text/javascript">
+		function GetCookie(name) {
+			var arg = name + "=";
+			var alen = arg.length;
+			var clen = document.cookie.length;
+			var i = 0;
+			while (i < clen) {
+				var j = i + alen;
+				if (document.cookie.substring(i, j) == arg)
+					return getCookieVal(j);
+				i = document.cookie.indexOf(" ", i) + 1;
+				if (i == 0)
+					break;
+			}
+			return null;
+		}
+		function SetCookie(name, value, expires, path, domain, secure) {
+			document.cookie = name + "=" + escape(value) +
+			((expires) ? "; expires=" + expires.toGMTString() : "") +
+			((path) ? "; path=" + path : "") +
+			((domain) ? "; domain=" + domain : "") +
+			((secure) ? "; secure" : "");
+		}
+		function getCookieVal(offset) {
+			var endstr = document.cookie.indexOf(";", offset);
+			if (endstr == -1)
+				endstr = document.cookie.length;
+			return unescape(document.cookie.substring(offset, endstr));
+		}
+		function schreibeCookie() {
+			with (document) {
+				haltbarDatum = new Date(2013, 11, 31, 1, 0, 0);
+				cookie = SetCookie("user",
+				document.getElementsByName("userid")[0].value, haltbarDatum);
+				cookie = SetCookie("pw",
+				document.getElementsByName("pw")[0].value, haltbarDatum);
+			}
+		}
+		function leseCookie() {
+			wert = GetCookie("user");
+			if (wert != null)
+				document.getElementsByName("userid")[0].value = wert;
+			wert = GetCookie("pw");
+			if (wert != null)
+				document.getElementsByName("pw")[0].value = wert;
+		}
+  </script>
+  <body>
+    <h1>Schreiben und Auslesen von einem Cookie</h1>
+    <form id="mF">
+      <table>
+        <tr><td>Userid</td>
+        	<td><input name="userid"></td></tr>
+        <tr><td>Passwort</td>
+          <td><input name="pw" type="password"></td></tr>
+        <tr><td><input type="Submit" value="Ok"></td>
+          <td><input type="reset" value="Abbruch"></td></tr>
+      </table>
+    </form>
+  </body>
+  <script type="text/javascript">
+		window.onload=leseCookie;
+		document.getElementById("mF").onsubmit = schreibeCookie;
+  </script>
+</html>
