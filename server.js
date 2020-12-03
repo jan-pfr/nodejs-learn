@@ -31,8 +31,8 @@ app.use('/settemperature', routerSetTemp);
     });
 
     //Zurückgeben der geänderten Temperatur
-    routerSetTemp.get('/:roomid/:degrees',(req, res)=>{
-        id = req.params.roomid;
+    routerSetTemp.get('/:room/:degrees',(req, res)=>{
+        id = req.params.room;
         for (let x = 0; x<= rooms.length-1; x++) {
             if (id === rooms[x].id) {
                 rooms[x].degrees = req.params.degrees;
