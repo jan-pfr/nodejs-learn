@@ -12,4 +12,19 @@ router.post('/', (req, res, next)=>{
     });
 });
 
+router.get('/:room', (req, res,next)=>{
+        const id = req.params.room;
+        if (id === 'kitchen'){
+            res.status(200).json({
+                message: 'Du bist in der Küche',
+                room: id
+            });
+        }else{
+            res.status(200).json({
+                message: 'Diesen Raum gibt es nicht'
+            });
+        }
+
+});
+
 module.exports = router;
