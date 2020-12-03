@@ -23,7 +23,7 @@ app.use('/settemperature', routerSetTemp);
             if (id === rooms[i].id){
                 res.status(200).json({
                     //message: 'Du bist in der ' + rooms[i].room,
-                    degree: rooms[i].degree
+                    degree: rooms[i].degrees
 
                 });
             }
