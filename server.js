@@ -14,7 +14,7 @@ app.use('/settemperature', routerSetTemp);
 
     routerGetTemp.get('/:room', (req, res, next)=>{
         id = req.params.room;
-        for (var i = 0; i<= rooms.length-1; i++){
+        for (let i = 0; i<= rooms.length-1; i++){
             if (id === rooms[i].id){
                 res.status(200).json({
                     //message: 'Du bist in der ' + rooms[i].room,
@@ -25,35 +25,43 @@ app.use('/settemperature', routerSetTemp);
         }
     });
 
-    routerSetTemp.get('/:room/:degrees',(req, res,next)=>{
-        id = req.params.room;
-        newDegree = req.params.degrees;
+    routerSetTemp.get('/:roomid/:degrees',(req, res,next)=>{
+        id = req.params.roomid;
+        for (let x = 0; x<= rooms.length-1; x++) {
+            if (id === rooms[x].id) {
+                rooms[x].degrees = req.params.degrees;
+                res.status(200).json({
+                    message:'Neue Temperatur ' + rooms[x].degrees+ '℃'
+                });
+            }
+        }
     });
+
 
 //Rooms
 let rooms = [
     {
         id: 'kitchen',
         room: 'Küche',
-        degree: 23
+        degrees: 23
 },
     {
         id: 'bathroom',
         room: 'Badezimmer',
-        degree: 22
+        degrees: 22
 },
     {
         id: 'bedroom',
         room: 'Schlafzimmer',
-        degree: 21
+        degrees: 21
 },
     {
         id: 'livingroom',
         room: 'Wohnzimmer',
-        degree: 25
+        degrees: 25
 },
     {
         id: 'office',
         room: 'Büro',
-        degree: 20
+        degrees: 20
 }]
