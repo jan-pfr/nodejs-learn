@@ -9,11 +9,10 @@ console.log(adresse);
 //Geht mit Punkt oder auch mit []
 adresse.plz = 78120
 console.log(adresse.plz);
-
+tossACoinToYourWitcher(20);
 function tossACoinToYourWitcher(coins){
   const consideredCoins = 42;
   let differenz = 42- coins;
   console.log('Dir fehlen '+ differenz +' Coins um den Witcher zu rufen.');
 }
 
-tossACoinToYourWitcher(20);
