@@ -1,22 +1,22 @@
-//Server initialisieren
+//initialise server
 const http = require('http');
 const express = require('express');
 const app = express();
 const routerGetTemp = express.Router();
 const routerSetTemp = express.Router();
 const server = http.createServer(app);
-//Port definieren
+//defining ports
 let port = Number(process.env.PORT);
 let id;
 if (!port)
     port = 3000;
 server.listen(port);
-//Routing für gettemperature
+//routing for gettemperature
 app.use('/gettemperature',routerGetTemp);
-//Routing für settemperature
+//routing for settemperature
 app.use('/settemperature', routerSetTemp);
 
-    //Zurückgabe der Temperatur des gewünschten Raums
+    //GET temmperature of chosen room
     routerGetTemp.get('/:room', (req, res)=>{
         id = req.params.room;
         for (let i = 0; i<= rooms.length-1; i++){
@@ -30,7 +30,7 @@ app.use('/settemperature', routerSetTemp);
         }
     });
 
-    //Zurückgeben der geänderten Temperatur
+    //GET change temperature of chosen room
     routerSetTemp.get('/:room/:degrees',(req, res)=>{
         id = req.params.room;
         for (let x = 0; x<= rooms.length-1; x++) {
@@ -44,7 +44,7 @@ app.use('/settemperature', routerSetTemp);
     });
 
 
-//vorhandene Räume mit Temperaturen
+//current rooms with temperatures
 let rooms = [
     {
         id: 'kitchen',
