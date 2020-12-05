@@ -1,6 +1,8 @@
-//initialise server
+//import packages
 const http = require('http');
 const express = require('express');
+const morgan = require('morgan');
+//initialise server
 const app = express();
 const routerGetTemp = express.Router();
 const routerSetTemp = express.Router();
@@ -11,6 +13,8 @@ let id;
 if (!port)
     port = 3000;
 server.listen(port);
+//loggin with morgan
+app.use(morgan('dev'));
 //routing for gettemperature
 app.use('/gettemperature',routerGetTemp);
 //routing for settemperature
@@ -42,8 +46,18 @@ app.use('/settemperature', routerSetTemp);
             }
         }
     });
-
-
+//error handling
+    app.use((req, res,  next) =>{
+        const error = new Error('Not found');
+        error.status(404);
+        next(error);
+    });
+    app.use((error, req,res)=>{
+        res.status(error.status || 500);
+        res.json({
+            message: error.message
+        });
+    });
 //current rooms with temperatures
 let rooms = [
     {
