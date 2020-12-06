@@ -8,19 +8,30 @@ const routerGetTemp = express.Router();
 const routerSetTemp = express.Router();
 const server = http.createServer(app);
 //defining ports
-let port = Number(process.env.PORT);
 let id;
+let port = Number(process.env.PORT);
 if (!port)
     port = 3000;
 server.listen(port);
+
+let allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "http://localhost:63342");
+    res.header('Access-Control-Allow-Headers', "*");
+    next();
+}
+app.use(allowCrossDomain);
+
+
+
 //loggin with morgan
+
 app.use(morgan('dev'));
 //routing for gettemperature
 app.use('/gettemperature',routerGetTemp);
 //routing for settemperature
 app.use('/settemperature', routerSetTemp);
 
-    //GET temmperature of chosen room
+    //GET temperature of chosen room
     routerGetTemp.get('/:room', (req, res)=>{
         id = req.params.room;
         for (let i = 0; i<= rooms.length-1; i++){
