@@ -16,3 +16,7 @@ function tossACoinToYourWitcher(coins){
   console.log('Dir fehlen '+ differenz +' Coins um den Witcher zu rufen.');
 }
 
+//app.use(express.static('./static'));
+// app.listen(4567);
+// console.log('localhost:4567');
+

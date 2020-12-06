@@ -47,15 +47,10 @@ app.use('/settemperature', routerSetTemp);
         }
     });
 //error handling
-    app.use((req, res,  next) =>{
-        const error = new Error('Not found');
-        error.status(404);
-        next(error);
-    });
-    app.use((error, req,res)=>{
-        res.status(error.status || 500);
+    app.use((error,res, req)=>{
+        res.status(error.statusCode || 500);
         res.json({
-            message: error.message
+            message: error.statusMessage
         });
     });
 //current rooms with temperatures
