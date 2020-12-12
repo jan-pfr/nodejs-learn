@@ -19,7 +19,9 @@
   "homepage": "https://github.com/jan-pfr/nodejs-learn#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "mosca": "^2.8.3",
+    "mqtt": "^4.2.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
