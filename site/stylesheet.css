@@ -1,0 +1,12 @@
+body{
+ background-color: #414141;
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    color: aliceblue;
+    background-color: #01ACE2;
+    font-size: 4.375em;
+    margin: 15px 15px 20px 15px;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
